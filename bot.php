@@ -16,7 +16,7 @@ try {
     });
 
 
-    $bot->on(function (\TelegramBot\Api\Types\Update $update) use ($bot, $inlineKeyboards) {
+    $bot->on(function (\TelegramBot\Api\Types\Update $update) use ($bot, $inlineKeyboards, $replyMarkups) {
         $message = $update->getMessage();
         $id = $message->getChat()->getId();
 
@@ -26,13 +26,17 @@ try {
             $bot->sendMessage($id, $message->getText(), null, false, null, $keyboard);
 
         } elseif ($function == 'about') {
-            $bot->sendMessage($id, 'https://telegra.ph/O-Kompanii-10-08-2');
+            $keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup($replyMarkups['main'], true, true);
+            $bot->sendMessage($id, 'https://telegra.ph/O-Kompanii-10-08-2', null, false, null, $keyboard);
         } elseif ($function == 'address') {
-            $bot->sendLocation($id, 41.354335, 69.347069);
+            $keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup($replyMarkups['main'], true, true);
+            $bot->sendLocation($id, 41.354335, 69.347069, null, $keyboard);
         } elseif ($function == 'examples') {
             $keyboard = new \TelegramBot\Api\Types\Inline\InlineKeyboardMarkup($inlineKeyboards['examples']);
             $bot->sendMessage($id, $message->getText(), null, false, null, $keyboard);
         } elseif ($function == 'contact') {
+            $keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup($replyMarkups['main'], true, true);
+
             $bot->sendMessage($id, "Контактные данные 📲
 
 +998712001505
@@ -46,7 +50,7 @@ Instagram 📷
 Instagram.com/even.uz
 
 Почта 📩
-info@even.uz");
+info@even.uz", null, false, null, $keyboard);
         }
 
     }, function () {
