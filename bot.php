@@ -10,7 +10,7 @@ try {
     $bot = new \TelegramBot\Api\Client('2087735209:AAFgPsYkLpeeo3J7rA1a9Ubr4fbdS6yPtdQ');
 
     $bot->command('start', function ($message) use ($bot, $replyMarkups) {
-        $keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup($replyMarkups['main'], true, true); // true for one-time keyboard
+        $keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup($replyMarkups['main'], false, true); // true for one-time keyboard
 
         $bot->sendMessage($message->getChat()->getId(), 'Добро пожаловать в бот even.uz', null, false, null, $keyboard);
     });
@@ -26,16 +26,16 @@ try {
             $bot->sendMessage($id, $message->getText(), null, false, null, $keyboard);
 
         } elseif ($function == 'about') {
-            $keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup($replyMarkups['main'], true, true);
+            $keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup($replyMarkups['main'], false, true);
             $bot->sendMessage($id, 'https://telegra.ph/O-Kompanii-10-08-2', null, false, null, $keyboard);
         } elseif ($function == 'address') {
-            $keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup($replyMarkups['main'], true, true);
+            $keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup($replyMarkups['main'], false, true);
             $bot->sendLocation($id, 41.354335, 69.347069, null, $keyboard);
         } elseif ($function == 'examples') {
             $keyboard = new \TelegramBot\Api\Types\Inline\InlineKeyboardMarkup($inlineKeyboards['examples']);
             $bot->sendMessage($id, $message->getText(), null, false, null, $keyboard);
         } elseif ($function == 'contact') {
-            $keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup($replyMarkups['main'], true, true);
+            $keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup($replyMarkups['main'], false, true);
 
             $bot->sendMessage($id, "Контактные данные 📲
 
