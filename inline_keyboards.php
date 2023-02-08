@@ -37,7 +37,7 @@ return [
             ['text' => 'Световой короб', 'url' => 'https://telegra.ph/KATALOG-09-17-2']
         ],
         [
-            ['text' => 'Световой короб', 'url' => 'https://telegra.ph/KATALOG-09-17-2'],
+            ['text' => 'Крышевая конструкция', 'url' => 'https://telegra.ph/KATALOG-09-17-13'],
             ['text' => 'Реклама на авто', 'url' => 'https://telegra.ph/KATALOG-09-17-3']
         ],
         [
@@ -57,8 +57,7 @@ return [
             ['text' => 'Видео буквы', 'url' => 'https://telegra.ph/KATALOG-09-17-11']
         ],
         [
-            ['text' => 'Картина из Холста', 'url' => 'https://telegra.ph/KATALOG-09-17-12'],
-            ['text' => 'Крышевая конструкция', 'url' => 'https://telegra.ph/KATALOG-09-17-13']
+            ['text' => 'Картина из Холста', 'url' => 'https://telegra.ph/KATALOG-09-17-12']
         ]
     ]
 ];
