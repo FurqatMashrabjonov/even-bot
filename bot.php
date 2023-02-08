@@ -30,7 +30,7 @@ try {
             $bot->sendMessage($id, 'https://telegra.ph/O-Kompanii-10-08-2', null, false, null, $keyboard);
         } elseif ($function == 'address') {
             $keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup($replyMarkups['main'], false, true);
-            $bot->sendLocation($id, 41.354335, 69.347069, null, $keyboard);
+            $bot->sendLocation($id, 41.382128, 69.294766, null, $keyboard);
         } elseif ($function == 'examples') {
             $keyboard = new \TelegramBot\Api\Types\Inline\InlineKeyboardMarkup($inlineKeyboards['examples']);
             $bot->sendMessage($id, $message->getText(), null, false, null, $keyboard);
